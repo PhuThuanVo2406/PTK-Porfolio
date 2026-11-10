@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Omega Sigma · Phi Theta Kappa</title>
-<meta name="description" content="The legacy page of the Omega Sigma chapter of Phi Theta Kappa at Houston City College – Northwest: events, officers, and awards since 1973.">
+<meta name="description" content="Omega Sigma, Phi Theta Kappa at Houston City College: we recognize your talent and help you prepare to fly. The legacy page of the Omega Sigma chapter of Phi Theta Kappa at Houston City College – Northwest: events, officers, and awards since 1973.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
@@ -225,6 +225,14 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
 @media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1024px){.cards{grid-template-columns:repeat(4,1fr)}}
 
+.foryou__head{display:flex;flex-direction:column;gap:2.5rem}
+.foryou__lead{max-width:44ch;font-size:1.125rem;line-height:1.625;color:var(--ink-muted)}
+.foryou__cta{margin-top:4rem;display:flex;flex-wrap:wrap;gap:1rem}
+@media (min-width:1024px){
+  .foryou__head{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .cards--3{grid-template-columns:repeat(3,1fr)}
+}
+
 /* ============================================================
    ABOUT
    ============================================================ */
@@ -280,13 +288,18 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
 .officer__photo{aspect-ratio:3/4;width:100%;transition:transform .6s var(--ease-out)}
 .officer__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:var(--surface-grey);border:1px dashed var(--line)}
 .officer__ph .mark{width:3rem;height:3rem;border:1px solid var(--line-strong);transform:rotate(45deg);display:flex;align-items:center;justify-content:center}
-.officer__ph .mark span{transform:rotate(-45deg);font-family:"Playfair Display",serif;font-style:italic;font-size:1.25rem;color:var(--ink-muted)}
+.officer__ph .mark span{transform:rotate(-45deg);font-family:"Playfair Display",serif;font-style:italic;font-size:1.125rem;color:var(--ink-muted)}
 .officer__ph small{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--ink-faint)}
 .officer__info{border-top:1px dashed var(--line);margin-top:1.25rem;padding-top:1rem}
 .officer__idx{font-family:"Playfair Display",serif;font-size:0.875rem;color:var(--ink-muted)}
 .officer h3{margin-top:0.5rem;font-family:"Playfair Display",serif;font-size:1.375rem;color:var(--ink)}
 .officer__role{margin-top:0.375rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink)}
-.officer__bio{margin-top:0.75rem;font-size:0.875rem;line-height:1.6;color:var(--ink-muted)}
+.officer__major{margin-top:0.75rem;font-size:0.875rem;line-height:1.5;color:var(--ink-muted)}
+.officer__toggle{margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink)}
+.officer__toggle .faq__plus{font-size:1rem}
+.officer__toggle[aria-expanded="true"] .faq__plus{transform:rotate(45deg)}
+.officer__bio{height:0;opacity:0;overflow:hidden;transition:height .55s var(--ease-out),opacity .55s var(--ease-out)}
+.officer__bio p{padding-top:0.75rem;font-size:0.875rem;line-height:1.6;color:var(--ink-muted)}
 .officer:first-child{grid-column:1 / -1}
 @media (hover:hover) and (min-width:769px){ .officer:hover .officer__photo{transform:translateY(-0.75rem)} }
 @media (min-width:640px){
@@ -440,7 +453,7 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
     <a class="logo" href="#top" aria-label="Omega Sigma home"><span class="logo__mark"></span><span class="logo__word">omega sigma</span></a>
     <div class="header__right">
       <nav class="header__nav" aria-label="Primary">
-        <a href="#events">Events</a><a href="#about">About</a><a href="#officers">Officers</a>
+        <a href="#for-you">For you</a><a href="#events">Events</a><a href="#officers">Officers</a>
       </nav>
       <button class="menu-btn" id="menuOpen" aria-haspopup="dialog" aria-controls="menu"><span class="menu-btn__word">Menu</span><span class="menu-btn__icon"><span></span><span></span></span></button>
     </div>
@@ -456,10 +469,10 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
   <div class="wrap grid12">
     <div class="hero__copy">
       <span class="eyebrow" data-reveal="fade">Phi Theta Kappa · Houston City College</span>
-      <h1 data-lines data-stagger="140">A legacy of <span class="accent">scholars</span> who lead.</h1>
-      <p class="hero__lead" data-words data-stagger="18" data-delay="500">Omega Sigma is the Phi Theta Kappa chapter at Houston City College – Northwest. Since 1973, our members have turned academic excellence into leadership, service, and friendships that outlast the semester. This page keeps the record.</p>
+      <h1 data-lines data-stagger="140">We see your talent. Let's help it <span class="accent">fly.</span></h1>
+      <p class="hero__lead" data-words data-stagger="18" data-delay="500">Omega Sigma is Phi Theta Kappa at Houston City College. We're here to recognize what you've already earned, connect you with scholarships and people who can open doors, and give you the prep you need to take off, wherever you're headed next.</p>
       <div class="hero__ctas" data-reveal="fadeUp" data-delay="800">
-        <a class="cta cta--solid" href="#events">See our story <span class="arrow">→</span></a>
+        <a class="cta cta--solid" href="#for-you">What we do for you <span class="arrow">→</span></a>
         <a class="cta cta--ghost" href="#officers">Meet the officers <span class="arrow">→</span></a>
       </div>
       <div class="hero__facts" data-reveal="fade" data-delay="1000">
@@ -482,9 +495,33 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
      ============================================================ -->
 <section class="section statement">
   <div class="wrap">
-    <span class="eyebrow" data-reveal="fade">The chapter</span>
-    <p class="statement__text" data-words data-stagger="30">Phi Theta Kappa asks four things of its members: scholarship, leadership, service, and fellowship. For more than fifty years, Omega Sigma has answered with study nights and service projects, conferences across the country, and a community that keeps showing up for each other.</p>
-    <p class="statement__sig" data-reveal="fadeUp" data-delay="400">— Omega Sigma, est. 1973</p>
+    <span class="eyebrow" data-reveal="fade">A note to you</span>
+    <p class="statement__text" data-words data-stagger="30">You worked hard to get here. Phi Theta Kappa is how that hard work gets noticed: by universities, by scholarship committees, and by a community of students who genuinely want you to win. Since 1973, Omega Sigma has been that community at HCC. Now it's yours.</p>
+    <p class="statement__sig" data-reveal="fadeUp" data-delay="400">— Your Omega Sigma officers</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOR YOU  (what the chapter offers students)
+     ============================================================ -->
+<section class="section grey" id="for-you">
+  <div class="wrap">
+    <div class="foryou__head">
+      <div class="sh">
+        <span class="eyebrow" data-reveal="fade">What we do for you</span>
+        <h2 data-lines>Recognized. Prepared. Ready to <span class="accent">fly.</span></h2>
+      </div>
+      <p class="foryou__lead" data-reveal="fade">Think of us as your launch crew. Whatever you're aiming for, whether that's a transfer, med school, a first internship, or just finding your people, here's how we help you get there.</p>
+    </div>
+    <div class="cards cards--3">
+      <article class="card" data-reveal="fadeUp" data-delay="0"><span class="card__idx">01</span><h3>We recognize your talent.</h3><p>Your grades earned you an invitation, and we make sure it counts: a medallion, an induction ceremony, and an honor that four-year schools recognize on your applications.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="90"><span class="card__idx">02</span><h3>We help you pay for what's next.</h3><p>Phi Theta Kappa members can apply for transfer scholarships at more than 800 partner colleges and universities. Our VP of Scholarship walks you through them, one application at a time.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="180"><span class="card__idx">03</span><h3>We grow you as a leader.</h3><p>Run a meeting, lead a project, speak up at a conference. Here, leadership is something you practise with people cheering you on, not just something you read about.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="0"><span class="card__idx">04</span><h3>We take you places.</h3><p>Honors Institutes and leadership conferences from Denver to College Station, where you'll meet students and mentors from across the state and the country.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="90"><span class="card__idx">05</span><h3>We give back together.</h3><p>Service and Honors in Action projects let you turn what you're learning into real help for HCC and for Houston, and they make great stories for your interviews.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="180"><span class="card__idx">06</span><h3>We've got your back.</h3><p>Study buddies, food-truck nights, and officers who actually answer your messages. College is a lot. You don't have to do it alone.</p></article>
+    </div>
+    <div class="foryou__cta" data-reveal="fadeUp"><a class="cta cta--solid" href="#contact">Come say hi <span class="arrow">→</span></a><a class="cta cta--ghost" href="#faq">Got questions? <span class="arrow">→</span></a></div>
   </div>
 </section>
 
@@ -494,7 +531,7 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
 <section class="section" id="events">
   <div class="wrap">
     <div class="sh">
-      <span class="eyebrow" data-reveal="fade">Events · 2026</span>
+      <span class="eyebrow" data-reveal="fade">What you've missed · 2026</span>
       <h2 data-lines>A year of <span class="accent">moments</span> worth keeping.</h2>
     </div>
     <div class="events__grid" id="eventsGrid"></div>
@@ -525,7 +562,7 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
   <div class="wrap">
     <div class="sh">
       <span class="eyebrow" data-reveal="fade">The four hallmarks</span>
-      <h2 data-lines>What the chapter runs on.</h2>
+      <h2 data-lines>Four promises we keep.</h2>
     </div>
     <div class="cards">
       <article class="card" data-reveal="fadeUp" data-delay="0"><span class="card__idx">01</span><h3>Scholarship</h3><p>We study hard and help each other do the same, from honors seminars to late-night review sessions.</p></article>
@@ -572,15 +609,15 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
 <section class="section" id="year">
   <div class="wrap grid12">
     <div class="process__left"><div class="process__sticky sh">
-      <span class="eyebrow" data-reveal="fade">The chapter year</span>
-      <h2 data-lines>From induction to the conference floor.</h2>
+      <span class="eyebrow" data-reveal="fade">Your year with us</span>
+      <h2 data-lines>From your first meeting to the conference floor.</h2>
     </div></div>
     <div class="process__right">
       <ol class="steps">
-        <li data-reveal="fadeUp"><span class="steps__idx">01</span><div class="steps__body"><h3>Induct</h3><p>Each year begins by pinning a new officer team and welcoming the members who earned their invitation.</p></div></li>
-        <li data-reveal="fadeUp"><span class="steps__idx">02</span><div class="steps__body"><h3>Gather</h3><p>General meetings bring everyone into one room for workshops, speakers, food, and planning what comes next.</p></div></li>
-        <li data-reveal="fadeUp"><span class="steps__idx">03</span><div class="steps__body"><h3>Travel</h3><p>Honors Institutes and leadership conferences take members to Denver, College Station, and beyond.</p></div></li>
-        <li data-reveal="fadeUp"><span class="steps__idx">04</span><div class="steps__body"><h3>Serve</h3><p>Research and service projects turn what we learn into something the campus and the community can use.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">01</span><div class="steps__body"><h3>Get inducted</h3><p>Accept your invitation, get your medallion, and meet the officers and advisors who will be in your corner all year.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">02</span><div class="steps__body"><h3>Show up</h3><p>Drop into general meetings for workshops, guest speakers, scholarship tips, and food. Come as often as your schedule allows.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">03</span><div class="steps__body"><h3>Go further</h3><p>Join us at Honors Institutes and leadership conferences in places like Denver and College Station. You'll come back with new skills and new friends.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">04</span><div class="steps__body"><h3>Make your mark</h3><p>Lead a service or research project, step into an officer role, and leave HCC with a story worth telling on every application.</p></div></li>
       </ol>
     </div>
   </div>
@@ -596,7 +633,7 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
         <span class="eyebrow" data-reveal="fade" id="officersTerm">Officer team</span>
         <h2 data-lines>Five officers, <span class="accent">one</span> chapter.</h2>
       </div>
-      <p class="officers__lead" data-reveal="fade">The students who keep Omega Sigma running this year: planning the meetings, leading the trips, and carrying the chapter's name to every conference.</p>
+      <p class="officers__lead" data-reveal="fade">These are the people in your corner this year. Find them at meetings, send them a message, and ask them anything. Helping you is literally their job.</p>
     </div>
     <div class="media officers__banner" data-reveal="plate"><img src="assets/photos/officer-induction/02.jpg" alt="The officer team after their induction ceremony" loading="lazy"></div>
     <p class="officers__banner-cap" data-reveal="fade">Officer induction · June 2026</p>
@@ -628,8 +665,8 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
   <div class="wrap">
     <div class="pinned__copy">
       <span class="eyebrow" data-reveal="fade">Join</span>
-      <h2 data-lines>Your name belongs on this page.</h2>
-      <p class="pinned__body" data-words data-stagger="16">Invited to Phi Theta Kappa, or just curious about what we do? Reach out to the chapter advisors or come to a general meeting. Every legacy starts with one conversation.</p>
+      <h2 data-lines>Ready to fly? Start here.</h2>
+      <p class="pinned__body" data-words data-stagger="16">Got your invitation? Say yes. Not sure yet? Come to a general meeting, grab some food, and meet us. We're here to recognize your talent and help you get wherever you're going. Your name belongs on this page.</p>
       <div class="pinned__cta" data-reveal="fadeUp" data-delay="300"><a class="cta cta--solid" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">Contact the chapter <span class="arrow">→</span></a></div>
     </div>
   </div>
@@ -669,7 +706,7 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
   <div class="wrap grid12">
     <div class="faq__left"><div class="sh">
       <span class="eyebrow" data-reveal="fade">Questions</span>
-      <h2 data-lines>Before you join.</h2>
+      <h2 data-lines>Ask us anything.</h2>
     </div></div>
     <div class="faq__right" id="faqList"></div>
   </div>
@@ -685,12 +722,12 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
     <div class="grid12">
       <div class="footer__brand" data-reveal="fadeUp">
         <a class="logo" href="#top"><span class="logo__mark"></span><span class="logo__word">omega sigma</span></a>
-        <p class="footer__tag">Scholarship, leadership, service, fellowship.</p>
+        <p class="footer__tag">We see your talent. Let's help it fly.</p>
         <a class="footer__mail" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">ptk.org / omega sigma</a>
       </div>
       <div class="footer__col">
         <p class="footer__title">Explore</p>
-        <ul class="footer__list"><li><a href="#events">Events</a></li><li><a href="#about">About</a></li><li><a href="#officers">Officers</a></li><li><a href="#awards">Awards</a></li></ul>
+        <ul class="footer__list"><li><a href="#for-you">For you</a></li><li><a href="#events">Events</a></li><li><a href="#about">About</a></li><li><a href="#officers">Officers</a></li><li><a href="#awards">Awards</a></li></ul>
       </div>
       <div class="footer__col">
         <p class="footer__title">Chapter</p>
@@ -746,14 +783,19 @@ dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--
    ============================================================ */
 const SITE = {
   officerTerm: "Officer team · 2026–27",
-  // Five officer slots. Replace name / role / bio, and set photo to a file path
-  // (e.g. "assets/photos/officers/president.jpg", 3:4 portrait) when ready.
+  // Officer team. `photo` takes a file path (e.g. "assets/photos/officers/president.jpg",
+  // 3:4 portrait) when portraits are ready; until then a monogram placeholder shows.
   officers: [
-    { name: "Officer Name", role: "President",                   bio: "Add a one-line bio: major, transfer goal, favourite chapter moment.", photo: null },
-    { name: "Officer Name", role: "Vice President of Scholarship", bio: "Add a one-line bio.", photo: null },
-    { name: "Officer Name", role: "Vice President of Leadership",  bio: "Add a one-line bio.", photo: null },
-    { name: "Officer Name", role: "Vice President of Service",     bio: "Add a one-line bio.", photo: null },
-    { name: "Officer Name", role: "Vice President of Fellowship",  bio: "Add a one-line bio.", photo: null },
+    { name: "Phu Thuan Vo (Vincent)", role: "Chapter President", major: "Mathematics, Data Science concentration", photo: null,
+      bio: "Phu Thuan Vo (Vincent) is a Mathematics major with a Data Science concentration at Houston City College. With a strong interest in financial analysis and data-driven decision-making, Vincent is passionate about using mathematics and technology to solve complex problems. As Chapter President, he is committed to creating a supportive and engaged chapter community where every member feels heard, valued, and empowered to achieve their goals." },
+    { name: "Angelina Olerynemzou", role: "Vice President of Scholarship", major: "Biology · International Student Ambassador", photo: null,
+      bio: "Angelina Olerynemzou serves as Vice President of Scholarship for the Omega Sigma Chapter for the 2026–2027 academic year. Originally from Gabon and Cameroon, she is a Biology major and returning International Student Ambassador. Her passion for healthcare and the human body drives her goal of pursuing a career in medicine. Outside of academics, Angelina enjoys dancing, spending time in the lab, learning new things, and helping others. As Vice President of Scholarship, she looks forward to helping members learn about the many scholarship opportunities available through Phi Theta Kappa and supporting their academic and personal growth throughout the year." },
+    { name: "Marleny Gomez Platero", role: "Vice President of Leadership", major: "Pre-med · Central Campus", photo: null,
+      bio: "Marleny Gomez Platero serves as Vice President of Leadership for the Omega Sigma Chapter. A pre-med student at Houston City College’s Central Campus, she has a particular interest in neuroscience and enjoys exploring the intersection between science and art. Outside of academics, Marleny enjoys reading classic literature and relaxing with a good cup of coffee. As Vice President of Leadership, she looks forward to encouraging members to develop their leadership skills and discover opportunities for personal and professional growth." },
+    { name: "Isabel Steffek", role: "Vice President of Service", major: "Neuroscience · Pre-med", photo: null,
+      bio: "Isabel Steffek serves as Vice President of Service for the Omega Sigma Chapter at Houston City College. She is a second-year pre-med student majoring in neuroscience and plans to attend medical school. Isabel enjoys reading, particularly fantasy fiction, listening to music, and volunteering at the Houston Museum of Natural Science. As Vice President of Service, she looks forward to creating meaningful opportunities for members to serve their community and make a positive impact." },
+    { name: "Yunzhang Mu", role: "Vice President of Fellowship", major: "Psychology", photo: null,
+      bio: "Yunzhang Mu is a sophomore at Houston City College majoring in Psychology and serves as Vice President of Fellowship for the Omega Sigma Chapter. Yunzhang is particularly interested in mental health, cross-cultural understanding, and helping others develop a healthy balance between their academic responsibilities and personal well-being. As Vice President of Fellowship, Yunzhang hopes to create opportunities that strengthen connections among members and contribute to a supportive and engaged chapter community." },
   ],
   // Events, newest last. cover = index into photos; ratio = cover aspect ratio.
   events: [
@@ -761,7 +803,7 @@ const SITE = {
       desc: "The new officer team received their medallions in a backyard ceremony with advisors and friends, the quiet start of a busy year." },
     { slug: "honors-institute-denver", title: "Honors Institute", place: "University of Denver", month: "June", year: "2026", ratio: "3 / 2", cover: 0, count: 5,
       desc: "Phi Theta Kappa's national Honors Institute brought our members to Denver for three days of lectures, seminars, and long conversations with chapters from across the country." },
-    { slug: "texas-honors-institute", title: "Texas Honors Institute", place: "Texas Junior College", month: "July", year: "2026", ratio: "3 / 2", cover: 0, count: 5,
+    { slug: "texas-honors-institute", title: "Texas Honors Institute", place: "Tyler Junior College", month: "July", year: "2026", ratio: "3 / 2", cover: 0, count: 5,
       desc: "A summer weekend with chapters from across Texas: honors sessions by day, campus walks at dusk, and plenty of new friends from other colleges." },
     { slug: "first-general-meeting", title: "First General Meeting", place: "HCC – Northwest", month: "September", year: "2026", ratio: "3 / 2", cover: 4, count: 5,
       desc: "The year's first general meeting introduced the officer team, welcomed new members, and gave everyone time to meet the advisors one-on-one." },
@@ -783,14 +825,16 @@ const SITE = {
     { year: "2017", items: ["Distinguished Chapter Award", "Distinguished Theme Award (Honors in Action)", "Honors in Action Project Award"] },
     { year: "2016", items: ["Distinguished Chapter Award", "Distinguished Theme Award (Honors in Action)", "Honors in Action Project Award", "Most Distinguished Chapter Finalist"] },
   ],
-  places: ["University of Denver", "Texas A&M University RELLIS Campus", "George Bush Presidential Library", "Texas Junior College", "Houston City College – Northwest", "Houston, Texas"],
+  places: ["University of Denver", "Texas A&M University RELLIS Campus", "George Bush Presidential Library", "Tyler Junior College", "Houston City College – Northwest", "Houston, Texas"],
   faq: [
     { q: "What is Phi Theta Kappa?", a: "Phi Theta Kappa is the international honor society for students at two-year colleges. Omega Sigma is its chapter at Houston City College – Northwest, chartered in 1973." },
     { q: "How do I become a member?", a: "Membership is by invitation, based on academic achievement. Eligible students hear from the chapter directly. If you have questions about current requirements, the chapter advisors can help." },
     { q: "What do members get?", a: "Members can apply for transfer scholarships from Phi Theta Kappa's four-year partners, which cover more than 800 colleges and universities, plus leadership training, conferences, and a community on campus." },
+    { q: "Is it worth it?", a: "If you're planning to transfer, absolutely. Membership opens the door to transfer scholarships, stands out on applications, and gives you real leadership experience you can talk about in interviews. Plus, you'll make friends who push you forward." },
+    { q: "I'm busy. How much time does it take?", a: "As much as you want to give. Come to general meetings when you can, and jump into trips, service projects, or officer roles when you're ready. We'll work around your schedule." },
     { q: "How can I reach the chapter?", a: "The advisors' contact details are listed on the Omega Sigma page at ptk.org. You can also find us at our general meetings during the fall and spring semesters." },
   ],
-  nav: [["Events","#events"],["About","#about"],["Officers","#officers"],["Awards","#awards"],["Join","#contact"]],
+  nav: [["For you","#for-you"],["Events","#events"],["About","#about"],["Officers","#officers"],["Awards","#awards"],["Join","#contact"]],
 };
 </script>
 
@@ -825,18 +869,20 @@ $("#eventsGrid").innerHTML = SITE.events.map((ev, i) => `
   </article>`).join("");
 
 $("#officersGrid").innerHTML = SITE.officers.map((o, i) => {
-  const initial = o.name && o.name !== "Officer Name" ? o.name.trim()[0] : (i + 1);
+  const initials = o.name.replace(/\(.*?\)/g, "").trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("");
   return `
   <article class="officer" data-reveal="fadeUp" data-delay="${i * 90}">
     <div class="media officer__photo">
       ${o.photo ? `<img src="${esc(o.photo)}" alt="${esc(o.name)}, ${esc(o.role)}" loading="lazy">`
-                : `<div class="officer__ph"><span class="mark"><span>${initial}</span></span><small>Photo coming soon</small></div>`}
+                : `<div class="officer__ph"><span class="mark"><span>${esc(initials)}</span></span><small>Photo coming soon</small></div>`}
     </div>
     <div class="officer__info">
       <span class="officer__idx">${pad(i + 1)}</span>
       <h3>${esc(o.name)}</h3>
       <p class="officer__role">${esc(o.role)}</p>
-      <p class="officer__bio">${esc(o.bio)}</p>
+      <p class="officer__major">${esc(o.major)}</p>
+      <button class="officer__toggle" aria-expanded="false" aria-controls="officer-bio-${i}">Read bio <span class="faq__plus" aria-hidden="true">+</span></button>
+      <div class="officer__bio" id="officer-bio-${i}" role="region"><p>${esc(o.bio)}</p></div>
     </div>
   </article>`;}).join("");
 
@@ -992,6 +1038,17 @@ document.querySelectorAll(".faq__btn").forEach(btn => {
     panel.style.opacity = open ? 1 : 0;
   });
   new ResizeObserver(() => { if (btn.getAttribute("aria-expanded") === "true") panel.style.height = panel.firstElementChild.scrollHeight + "px"; }).observe(panel.firstElementChild);
+});
+
+document.querySelectorAll(".officer__toggle").forEach(btn => {
+  const panel = document.getElementById(btn.getAttribute("aria-controls"));
+  btn.addEventListener("click", () => {
+    const open = btn.getAttribute("aria-expanded") !== "true";
+    btn.setAttribute("aria-expanded", open);
+    btn.firstChild.textContent = open ? "Close bio " : "Read bio ";
+    panel.style.height = open ? panel.scrollHeight + "px" : "0px";
+    panel.style.opacity = open ? 1 : 0;
+  });
 });
 
 /* ============================================================

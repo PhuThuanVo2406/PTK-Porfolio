@@ -22,7 +22,7 @@ Dates come from the photos' camera timestamps.
 |---|-------|-------|------|-------------|--------------|
 | 1 | Officer Induction | Houston | June 7, 2026 | 4 of 4 | Officer Induction |
 | 2 | Honors Institute | University of Denver | June 20–22, 2026 | 5 of 12 | Honors Institute - University of Denver |
-| 3 | Texas Honors Institute | Texas Junior College (to confirm) | July 10–11, 2026 | 5 of 10 (+2 videos not used) | Texas Honors Institute - Texas Junior College |
+| 3 | Texas Honors Institute | Tyler Junior College (TJC) | July 10–11, 2026 | 5 of 10 (+2 videos not used) | Texas Honors Institute - Texas Junior College |
 | 4 | First General Meeting | HCC – Northwest | September 4, 2026 (officer photos Aug 14) | 5 of 16 | First General Meeting |
 | 5 | Fellowship | Around Houston | July–September 2026 | 5 of 9 | Fellowship |
 | 6 | Second General Meeting | HCC – Northwest | October 2, 2026 | 4 of 7 (+1 video not used) | 2nd General Meeting |
@@ -49,6 +49,5 @@ Dates come from the photos' camera timestamps.
 
 ## Still needed from the chapter
 
-- **Officers**: five names, roles, one-line bios, and a 3:4 portrait each (save as `assets/photos/officers/<role>.jpg` and set `photo` in `SITE.officers`). The roles are placeholders that follow PTK's usual President plus four hallmark VPs. Change them to match the real titles.
-- **Texas Honors Institute location**: the Drive folder says "Texas Junior College". Please confirm the host college's exact name.
+- **Officer portraits**: names, roles, and bios for the 2026–27 team are in. Add a 3:4 portrait for each officer (save as `assets/photos/officers/<name>.jpg` and set `photo` in `SITE.officers`).
 - **Not used**: three videos (`.MOV`), one large photo that the Drive download couldn't fetch (Texas Honors Institute, `8a3ffd43…jpg`, 6.6 MB), and a 7.6 MB PNG in Fellowship. `IMG_1529.HEIC` appears in both the Fellowship and Texas Leadership Conference folders (it's the same file).
