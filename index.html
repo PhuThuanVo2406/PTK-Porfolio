@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omega Sigma · Phi Theta Kappa</title>
+<meta name="description" content="The legacy page of the Omega Sigma chapter of Phi Theta Kappa at Houston City College – Northwest: events, officers, and awards since 1973.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap">
+<style>
+/* ============================================================
+   TOKENS + RESET
+   ============================================================ */
+:root{
+  --canvas:#ffffff; --surface-grey:#f3f3f3; --surface-dark:#191917;
+  --ink:#191917; --ink-muted:rgba(25,25,23,0.6); --ink-faint:rgba(25,25,23,0.3);
+  --on-dark:#ffffff; --on-dark-muted:rgba(255,255,255,0.6); --on-dark-faint:rgba(255,255,255,0.3);
+  --line:rgba(25,25,23,0.2); --line-strong:rgba(25,25,23,0.4); --line-on-dark:rgba(255,255,255,0.2);
+  --ease-out:cubic-bezier(0.16,1,0.3,1); --ease-quart:cubic-bezier(0.165,0.84,0.44,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+html{font-size:16px}
+@media (max-width:1920px){html{font-size:0.833333vw}}
+@media (max-width:1440px){html{font-size:1.111111vw}}
+@media (max-width:1024px){html{font-size:1.5625vw}}
+@media (max-width:640px){html{font-size:4.444444vw}}
+body{background:#ffffff;color:#191917;font-family:"Satoshi",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:400;text-transform:none;letter-spacing:-0.01em;line-height:1.12}
+::selection{background:#191917;color:#ffffff}
+html.lenis,html.lenis body{height:auto}
+html.is-locked{overflow:hidden;height:100%;position:relative}
+.serif{font-family:"Playfair Display",serif}
+.accent{font-family:"Playfair Display",serif;font-style:italic;font-weight:400;text-transform:none}
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.section{position:relative;border-top:1px dashed var(--line);background:var(--canvas);padding:6rem 1.5rem;scroll-margin-top:6rem}
+.section.grey{background:var(--surface-grey)}
+.wrap{max-width:120rem;margin-inline:auto;width:100%}
+.grid12{display:grid;grid-template-columns:1fr;gap:3rem}
+@media (min-width:1024px){
+  .section{padding:8rem 3rem}
+  .grid12{grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+}
+
+/* ============================================================
+   SHARED PRIMITIVES
+   ============================================================ */
+.eyebrow{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--ink-muted)}
+.eyebrow::before{content:"";width:2rem;height:1px;background:var(--ink-muted)}
+.dark .eyebrow{color:var(--on-dark-muted)}
+.dark .eyebrow::before{background:var(--on-dark-muted)}
+
+.cta{display:inline-flex;align-items:center;gap:0.75rem;padding:1rem 2rem;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.14em;transition:background-color .3s,color .3s,opacity .3s,border-color .3s}
+.cta .arrow{display:inline-block;transition:transform .4s var(--ease-out)}
+.cta--solid{background:#191917;color:#fff}
+.cta--ghost{border:1px dashed var(--line);color:#191917}
+.dark .cta--solid{background:#fff;color:#191917}
+.dark .cta--ghost{border-color:var(--line-on-dark);color:#fff}
+@media (hover:hover) and (min-width:769px){
+  .cta:hover .arrow{transform:translateX(0.4rem)}
+  .cta--solid:hover{opacity:.9}
+  .cta--ghost:hover{background:#191917;color:#fff}
+  .dark .cta--ghost:hover{background:#fff;color:#191917}
+}
+
+.sh{max-width:none}
+.sh .eyebrow{margin-bottom:1.5rem}
+.sh h2{max-width:18ch;font-size:2.25rem;color:var(--ink)}
+@media (min-width:640px){.sh h2{font-size:3rem}}
+@media (min-width:1024px){.sh h2{font-size:4.5rem}}
+
+/* Ratio-locked media. Photos are shown monochrome to match the editorial look;
+   colour returns on hover and inside the lightbox. */
+.media{position:relative;overflow:hidden;background:var(--surface-grey)}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);transition:filter .8s var(--ease-out),transform .7s var(--ease-out)}
+@media (hover:hover){ .media:hover img{filter:grayscale(0)} }
+.dark .media{background:#2a2a27}
+
+/* ============================================================
+   MOTION (IntersectionObserver driven, plays once)
+   ============================================================ */
+[data-reveal]{will-change:transform,opacity}
+[data-reveal="fade"]{opacity:0;transition:opacity .64s var(--ease-out)}
+[data-reveal="fadeUp"]{opacity:0;transform:translateY(2.5rem);transition:opacity .72s var(--ease-out),transform .72s var(--ease-out)}
+[data-reveal="plate"]{opacity:0;transform:translateY(3.5rem) scale(1.04);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+[data-reveal].in{opacity:1;transform:none}
+.line-clip{display:block;overflow:hidden;padding-bottom:0.08em;margin-bottom:-0.08em}
+.line-inner{display:block;transform:translateY(110%);opacity:0;transition:transform 1s var(--ease-out),opacity 1s var(--ease-out)}
+.in .line-inner{transform:none;opacity:1}
+[data-lines]{visibility:hidden}
+[data-lines].split{visibility:visible}
+.w{display:inline-block;transform:translateY(0.8rem);opacity:0;transition:transform .72s var(--ease-quart),opacity .72s var(--ease-quart)}
+.in .w{transform:none;opacity:1}
+html.reduced [data-reveal],html.reduced .line-inner,html.reduced .w{opacity:1!important;transform:none!important;transition:none!important}
+html.reduced [data-lines]{visibility:visible}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header{position:fixed;inset-inline:0;top:0;z-index:50;color:#fff;mix-blend-mode:difference}
+.header__in{display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:1.25rem 1.5rem}
+.header__left{display:none}
+.header__left p:first-child{font-size:0.875rem;letter-spacing:-0.02em}
+.header__left p:last-child{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.7)}
+.logo{display:inline-flex;align-items:center;gap:0.75rem;justify-self:start}
+.logo__mark{width:0.625rem;height:0.625rem;border:1px solid currentColor;transform:rotate(45deg)}
+.logo__word{font-family:"Playfair Display",serif;font-style:italic;text-transform:lowercase;font-size:1.125rem;letter-spacing:0.04em}
+.header__right{justify-self:end;display:flex;align-items:center;gap:2rem}
+.header__nav{display:none;gap:2rem}
+.header__nav a{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.14em}
+.header__nav a::before{content:"";width:1px;height:1px;border-radius:50%;background:#fff;opacity:0;transition:opacity .3s;box-shadow:0 0 0 1.5px #fff}
+.header__nav a:hover::before{opacity:1}
+.menu-btn{display:inline-flex;align-items:center;gap:0.75rem}
+.menu-btn__word{display:none;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.16em}
+.menu-btn__icon{display:flex;flex-direction:column;gap:0.375rem}
+.menu-btn__icon span{display:block;height:1px;width:1.5rem;background:#fff}
+@media (min-width:640px){.menu-btn__word{display:inline}}
+@media (min-width:1024px){
+  .header__in{grid-template-columns:repeat(3,1fr);padding:1.25rem 3rem}
+  .header__left{display:block}
+  .logo{justify-self:center}
+  .header__nav{display:flex}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;min-height:100svh;padding:8rem 1.5rem 4rem}
+.hero .grid12{align-items:center}
+.hero h1{max-width:14ch;margin-top:1.5rem;font-size:3.75rem;line-height:1.04}
+.hero__lead{max-width:46ch;margin-top:2.5rem;font-size:1.125rem;line-height:1.625;color:var(--ink-muted)}
+.hero__ctas{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem}
+.hero__facts{display:none;margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem}
+.facts3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+dt{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--ink-faint)}
+.hero dd{font-size:0.875rem;color:var(--ink);margin-top:0.25rem}
+.hero__img{aspect-ratio:3/4;width:100%}
+.hero__cue{display:flex;align-items:center;gap:0.75rem;margin-top:3rem}
+.hero__cue span:first-child{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.3em;color:var(--ink-faint)}
+.hero__cue span:last-child{width:1px;height:2.5rem;background:var(--line-strong)}
+@media (min-width:640px){.hero h1{font-size:4.5rem}}
+@media (min-width:1024px){
+  .hero{padding:10rem 3rem 4rem}
+  .hero h1{font-size:6rem}
+  .hero__copy{grid-column:span 6}
+  .hero__plate{grid-column:7 / span 6}
+  .hero__facts{display:block}
+  .hero__cue{display:none}
+}
+
+/* ============================================================
+   STATEMENT
+   ============================================================ */
+.statement{padding:7rem 1.5rem}
+.statement .wrap{max-width:80rem}
+.statement .eyebrow{margin-bottom:3rem}
+.statement__text{font-family:"Playfair Display",serif;font-size:1.875rem;line-height:1.3;color:var(--ink)}
+.statement__sig{margin-top:3rem;font-family:"Playfair Display",serif;font-style:italic;font-size:1.25rem;color:var(--ink-muted)}
+@media (min-width:640px){.statement__text{font-size:2.25rem}}
+@media (min-width:1024px){.statement{padding:10rem 3rem}.statement__text{font-size:3rem;line-height:1.25}}
+
+/* ============================================================
+   EVENTS (featured, zig-zag)
+   ============================================================ */
+.events__grid{margin-top:4rem;display:grid;grid-template-columns:1fr;gap:4rem}
+.event figure{display:block}
+.event .media{width:100%}
+.event .parallax-inner{position:absolute;inset:-2.5rem 0;will-change:transform}
+.event figcaption{border-top:1px dashed var(--line);margin-top:1.5rem;padding-top:1.25rem}
+.event__row{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem}
+.event h3{font-family:"Satoshi",sans-serif;font-size:1.25rem;font-weight:500;color:var(--ink);letter-spacing:0;line-height:1.3}
+.event__meta{font-size:0.875rem;color:var(--ink-muted);margin-top:0.25rem}
+.event__year{font-family:"Playfair Display",serif;font-size:1rem;color:var(--ink);white-space:nowrap}
+.event__desc{margin-top:1rem;max-width:52ch;font-size:1rem;line-height:1.625;color:var(--ink-muted)}
+.event__open{margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink)}
+.event__open .arrow{transition:transform .4s var(--ease-out)}
+.event__open:hover .arrow{transform:translateX(0.4rem)}
+.event__trigger{display:block;width:100%;text-align:left}
+@media (min-width:1024px){
+  .events__grid{margin-top:6rem;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;row-gap:0}
+  .event{grid-column:1 / span 7}
+  .event:nth-child(even){grid-column:6 / span 7;margin-top:6rem}
+  .event + .event{margin-top:4rem}
+  .event:nth-child(even){margin-top:6rem}
+}
+
+/* ============================================================
+   PINNED CTA (dark)
+   ============================================================ */
+.pinned{border-top:1px dashed var(--line);background:#191917;color:var(--on-dark);min-height:100svh;display:flex;align-items:center;padding:6rem 1.5rem;scroll-margin-top:6rem}
+.pinned .grid12{align-items:center}
+.pinned__copy{max-width:34rem}
+.pinned__copy .eyebrow{margin-bottom:1.5rem}
+.pinned h2{font-size:2.25rem;color:var(--on-dark)}
+.pinned__body{margin-top:2rem;font-size:1.125rem;line-height:1.625;color:var(--on-dark-muted)}
+.pinned__cta{margin-top:2.5rem}
+.pinned__img{aspect-ratio:3/4;width:100%}
+.pinned--center .pinned__copy{max-width:40rem;margin-inline:auto;text-align:center}
+.pinned--center .pinned__cta{display:flex;justify-content:center}
+@media (min-width:640px){.pinned h2{font-size:3rem}}
+@media (min-width:1024px){
+  .pinned{padding:6rem 3rem}
+  .pinned h2{font-size:3.75rem}
+  .pinned__copywrap{grid-column:span 6}
+  .pinned__plate{grid-column:8 / span 5}
+}
+
+/* ============================================================
+   HALLMARKS (grey cards)
+   ============================================================ */
+.cards{margin-top:4rem;display:grid;grid-template-columns:1fr;column-gap:3rem;row-gap:2.5rem}
+.card{border-top:1px dashed var(--line);padding-top:2rem;display:flex;flex-direction:column}
+.card__idx{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--ink)}
+.card h3{margin-top:1.5rem;font-family:"Satoshi",sans-serif;font-size:1.25rem;font-weight:500;line-height:1.25;letter-spacing:0;color:var(--ink)}
+.card p{margin-top:0.75rem;font-size:1rem;line-height:1.625;color:var(--ink-muted)}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.cards{grid-template-columns:repeat(4,1fr)}}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about h2{max-width:20ch;font-size:2.25rem;line-height:1.1;color:var(--ink)}
+.about .eyebrow{margin-bottom:2rem}
+.about__paras{display:flex;flex-direction:column;gap:1.5rem}
+.about__paras p{max-width:52ch;font-size:1rem;line-height:1.625;color:var(--ink-muted)}
+.about__photos{margin-top:4rem;display:grid;grid-template-columns:1fr;gap:1.5rem}
+.about__photos .media{aspect-ratio:3/2}
+.ledger{margin-top:4rem;border-top:1px dashed var(--line);padding-top:2.5rem;display:grid;grid-template-columns:repeat(2,1fr);column-gap:2rem;row-gap:1.5rem}
+.ledger dd{margin-top:0.5rem;font-size:1rem;color:var(--ink)}
+@media (min-width:640px){
+  .about h2{font-size:3rem}
+  .about__photos{grid-template-columns:repeat(3,1fr)}
+  .ledger{grid-template-columns:repeat(4,1fr)}
+}
+@media (hover:hover) and (min-width:769px){ .about__photos .media:hover img{transform:scale(1.06)} }
+@media (min-width:1024px){
+  .about h2{font-size:3.75rem}
+  .about__head{grid-column:span 7}
+  .about__side{grid-column:span 5}
+  .about__photos{margin-top:5rem}
+}
+
+/* ============================================================
+   CHAPTER YEAR (process, sticky heading)
+   ============================================================ */
+.steps li{border-top:1px dashed var(--line);padding-block:2.5rem;display:flex;flex-direction:column;gap:1rem}
+.steps__idx{font-family:"Playfair Display",serif;font-size:4.5rem;line-height:1;color:var(--ink-faint)}
+.steps h3{font-family:"Satoshi",sans-serif;font-size:1.5rem;font-weight:500;letter-spacing:0;color:var(--ink)}
+.steps p{margin-top:1rem;max-width:48ch;font-size:1.125rem;line-height:1.625;color:var(--ink-muted)}
+@media (min-width:640px){
+  .steps li{flex-direction:row;gap:3rem;padding-block:3rem}
+  .steps__idx{font-size:6rem}
+  .steps__body{padding-top:0.75rem}
+}
+@media (min-width:1024px){
+  .process__left{grid-column:span 5}
+  .process__sticky{position:sticky;top:8rem}
+  .process__right{grid-column:span 7}
+  .steps h3{font-size:1.875rem}
+}
+
+/* ============================================================
+   OFFICERS
+   ============================================================ */
+.officers__head{display:flex;flex-direction:column;gap:2.5rem}
+.officers__lead{max-width:42ch;font-size:1rem;line-height:1.625;color:var(--ink-muted)}
+.officers__banner{margin-top:4rem;aspect-ratio:16/9;width:100%}
+.officers__banner-cap{margin-top:1rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-faint)}
+.officers__grid{margin-top:4rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.25rem;row-gap:3rem}
+.officer{display:flex;flex-direction:column}
+.officer__photo{aspect-ratio:3/4;width:100%;transition:transform .6s var(--ease-out)}
+.officer__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:var(--surface-grey);border:1px dashed var(--line)}
+.officer__ph .mark{width:3rem;height:3rem;border:1px solid var(--line-strong);transform:rotate(45deg);display:flex;align-items:center;justify-content:center}
+.officer__ph .mark span{transform:rotate(-45deg);font-family:"Playfair Display",serif;font-style:italic;font-size:1.25rem;color:var(--ink-muted)}
+.officer__ph small{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--ink-faint)}
+.officer__info{border-top:1px dashed var(--line);margin-top:1.25rem;padding-top:1rem}
+.officer__idx{font-family:"Playfair Display",serif;font-size:0.875rem;color:var(--ink-muted)}
+.officer h3{margin-top:0.5rem;font-family:"Playfair Display",serif;font-size:1.375rem;color:var(--ink)}
+.officer__role{margin-top:0.375rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink)}
+.officer__bio{margin-top:0.75rem;font-size:0.875rem;line-height:1.6;color:var(--ink-muted)}
+.officer:first-child{grid-column:1 / -1}
+@media (hover:hover) and (min-width:769px){ .officer:hover .officer__photo{transform:translateY(-0.75rem)} }
+@media (min-width:640px){
+  .officers__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .officer:first-child{grid-column:auto}
+}
+@media (min-width:1024px){
+  .officers__head{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .officers__banner{aspect-ratio:21/9}
+  .officers__grid{grid-template-columns:repeat(5,minmax(0,1fr));column-gap:2rem}
+  .officer:nth-child(even){margin-top:4rem}
+}
+
+/* ============================================================
+   AWARDS
+   ============================================================ */
+.awards__head{display:flex;flex-direction:column;gap:2.5rem}
+.awards__lead{max-width:42ch;font-size:1rem;line-height:1.625;color:var(--ink-muted)}
+.awards__grid{margin-top:4rem;display:grid;grid-template-columns:1fr;column-gap:2.5rem;row-gap:3rem}
+.award{border-top:1px dashed var(--line);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem}
+.award ul{display:flex;flex-direction:column;gap:0.5rem}
+.award li{font-size:1.125rem;font-weight:500;color:var(--ink);line-height:1.35}
+.award small{display:block;margin-top:0.75rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-faint)}
+.award__year{font-family:"Playfair Display",serif;font-size:2.25rem;line-height:1;color:var(--ink)}
+.awards__cta{margin-top:4rem;display:flex;justify-content:center}
+@media (min-width:640px){.awards__grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.awards__head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery__filters{margin-top:3rem;display:flex;flex-wrap:wrap;gap:0.5rem}
+.chip{padding:0.5rem 1rem;border:1px dashed var(--line);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-muted);transition:background .3s,color .3s}
+.chip[aria-pressed="true"],.chip:hover{background:#191917;color:#fff;border-color:#191917}
+.gallery__grid{margin-top:3rem;columns:2;column-gap:1rem}
+.gallery__item{break-inside:avoid;margin-bottom:1rem;display:block;width:100%;text-align:left}
+.gallery__item .media{width:100%}
+.gallery__item span{display:block;margin-top:0.5rem;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--ink-faint)}
+.gallery__item[hidden]{display:none}
+@media (min-width:768px){.gallery__grid{columns:3;column-gap:1.5rem}.gallery__item{margin-bottom:1.5rem}}
+@media (min-width:1024px){.gallery__grid{columns:4}}
+
+/* ============================================================
+   PLACES
+   ============================================================ */
+.places{margin-top:4rem;display:grid;grid-template-columns:1fr}
+.places li{border-top:1px dashed var(--line);padding-block:1.5rem;display:flex;align-items:baseline;gap:1.25rem}
+.places .idx{font-family:"Playfair Display",serif;font-size:0.875rem;color:var(--ink-muted)}
+.places .name{font-family:"Playfair Display",serif;font-size:1.25rem;color:var(--ink)}
+@media (min-width:640px){.places{grid-template-columns:repeat(2,1fr);column-gap:2rem}}
+@media (min-width:1024px){.places{grid-template-columns:repeat(3,1fr)}.places .name{font-size:1.5rem}}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq__row{border-top:1px dashed var(--line)}
+.faq__btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:2rem;padding-block:2rem;text-align:left}
+.faq__q{font-family:"Satoshi",sans-serif;font-size:1.25rem;font-weight:500;color:var(--ink)}
+.faq__plus{font-size:1.5rem;line-height:1;color:var(--ink);transition:transform .45s var(--ease-out)}
+.faq__btn[aria-expanded="true"] .faq__plus{transform:rotate(45deg)}
+.faq__panel{height:0;opacity:0;overflow:hidden;transition:height .55s var(--ease-out),opacity .55s var(--ease-out)}
+.faq__panel p{padding-bottom:2.5rem;max-width:60ch;font-size:1.125rem;line-height:1.625;color:var(--ink-muted)}
+@media (min-width:1024px){
+  .faq__left{grid-column:span 4}
+  .faq__right{grid-column:span 8}
+  .faq__q{font-size:1.5rem}
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#191917;color:#fff;padding:6rem 1.5rem 3rem}
+.footer .grid12{gap:4rem}
+.footer__tag{margin-top:1.5rem;max-width:28ch;font-family:"Playfair Display",serif;font-style:italic;font-size:1.5rem;color:var(--on-dark-muted)}
+.footer__mail{display:inline-block;margin-top:2rem;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--on-dark);transition:color .3s}
+.footer__mail:hover{color:var(--on-dark-muted)}
+.footer__title{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--on-dark-faint)}
+.footer__list{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem}
+.footer__list a{font-size:1rem;color:var(--on-dark-muted);transition:color .3s}
+.footer__list a:hover{color:var(--on-dark)}
+.footer__giant{margin-top:6rem;overflow:hidden;text-align:center;font-size:13vw;font-weight:900;text-transform:uppercase;line-height:0.8;letter-spacing:-0.04em;color:rgba(255,255,255,0.1);white-space:nowrap}
+.footer__legal{margin-top:3rem;border-top:1px dashed var(--line-on-dark);padding-top:2rem;display:flex;flex-direction:column;gap:1rem;justify-content:space-between}
+.footer__legal p,.footer__legal a{font-size:0.875rem;color:var(--on-dark-faint)}
+.footer__legal a:hover{color:var(--on-dark-muted)}
+@media (min-width:640px){.footer__legal{flex-direction:row}}
+@media (min-width:1024px){
+  .footer{padding:6rem 3rem 3rem}
+  .footer .grid12{gap:3rem}
+  .footer__brand{grid-column:span 5}
+  .footer__col{grid-column:span 2}
+  .footer__col--wide{grid-column:span 3}
+}
+
+/* ============================================================
+   MODAL MENU
+   ============================================================ */
+.menu{position:fixed;inset:0;z-index:60;color:#fff;visibility:hidden;pointer-events:none}
+.menu.open{visibility:visible;pointer-events:auto}
+.menu__panel{position:absolute;inset:0;background:#191917;transform-origin:top;transform:scaleY(0);transition:transform .6s var(--ease-out)}
+.menu.open .menu__panel{transform:scaleY(1)}
+.menu__content{position:relative;height:100%;display:flex;flex-direction:column;padding:1.5rem 1.5rem 2.5rem}
+.menu__top{display:flex;justify-content:space-between;align-items:center;opacity:0;transition:opacity .3s}
+.menu.open .menu__top{opacity:1;transition-delay:.2s}
+.menu__label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.28em;color:var(--on-dark-faint)}
+.menu__close{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;transition:color .3s}
+.menu__close:hover{color:var(--on-dark-muted)}
+.menu__nav{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0.5rem}
+.menu__nav a{display:flex;align-items:baseline;gap:1.25rem;opacity:0;transform:translateY(1.5rem);transition:opacity .2s,transform .2s}
+.menu.open .menu__nav a{opacity:1;transform:none;transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.menu__nav .idx{width:2rem;font-size:0.875rem;color:var(--on-dark-muted)}
+.menu__nav .lbl{font-family:"Playfair Display",serif;font-size:3rem;line-height:1.12}
+.menu__nav a:hover .lbl{font-style:italic}
+.menu__bottom{border-top:1px dashed var(--line-on-dark);padding-top:2rem;display:flex;flex-direction:column;gap:1.5rem;justify-content:space-between;opacity:0;transition:opacity .2s}
+.menu.open .menu__bottom{opacity:1;transition:opacity .6s var(--ease-out) .6s}
+.menu__bottom a.mail{font-size:1.125rem}
+.menu__bottom p{font-size:0.875rem;color:var(--on-dark-muted);margin-top:0.25rem}
+.menu__social{display:flex;gap:1.5rem}
+.menu__social a{font-size:0.875rem;text-transform:uppercase;letter-spacing:0.16em;color:var(--on-dark-muted)}
+.menu__social a:hover{color:var(--on-dark)}
+@media (min-width:640px){.menu__nav .lbl{font-size:3.75rem}.menu__bottom{flex-direction:row;align-items:flex-end}}
+@media (min-width:1024px){.menu__content{padding:1.5rem 3rem 2.5rem}.menu__nav .lbl{font-size:4.5rem}}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lb{position:fixed;inset:0;z-index:70;background:rgba(25,25,23,0.97);color:#fff;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .4s var(--ease-out),visibility 0s .4s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .4s var(--ease-out)}
+.lb__top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.5rem}
+.lb__title{font-family:"Playfair Display",serif;font-size:1.25rem}
+.lb__count{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--on-dark-muted);margin-top:0.25rem}
+.lb__close{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em}
+.lb__stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:0 1.5rem 1.5rem;min-height:0}
+.lb__stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lb__nav{position:absolute;top:50%;transform:translateY(-50%);padding:1rem;font-size:1.5rem;color:var(--on-dark-muted);transition:color .3s}
+.lb__nav:hover{color:#fff}
+.lb__prev{left:0.5rem}.lb__next{right:0.5rem}
+@media (min-width:1024px){.lb__top{padding:1.5rem 3rem}.lb__stage{padding:0 6rem 3rem}}
+</style>
+</head>
+<body id="top">
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header">
+  <div class="header__in">
+    <div class="header__left">
+      <p>Phi Theta Kappa · Omega Sigma</p>
+      <p>Scholarship · Leadership · Service · Fellowship</p>
+    </div>
+    <a class="logo" href="#top" aria-label="Omega Sigma home"><span class="logo__mark"></span><span class="logo__word">omega sigma</span></a>
+    <div class="header__right">
+      <nav class="header__nav" aria-label="Primary">
+        <a href="#events">Events</a><a href="#about">About</a><a href="#officers">Officers</a>
+      </nav>
+      <button class="menu-btn" id="menuOpen" aria-haspopup="dialog" aria-controls="menu"><span class="menu-btn__word">Menu</span><span class="menu-btn__icon"><span></span><span></span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="wrap grid12">
+    <div class="hero__copy">
+      <span class="eyebrow" data-reveal="fade">Phi Theta Kappa · Houston City College</span>
+      <h1 data-lines data-stagger="140">A legacy of <span class="accent">scholars</span> who lead.</h1>
+      <p class="hero__lead" data-words data-stagger="18" data-delay="500">Omega Sigma is the Phi Theta Kappa chapter at Houston City College – Northwest. Since 1973, our members have turned academic excellence into leadership, service, and friendships that outlast the semester. This page keeps the record.</p>
+      <div class="hero__ctas" data-reveal="fadeUp" data-delay="800">
+        <a class="cta cta--solid" href="#events">See our story <span class="arrow">→</span></a>
+        <a class="cta cta--ghost" href="#officers">Meet the officers <span class="arrow">→</span></a>
+      </div>
+      <div class="hero__facts" data-reveal="fade" data-delay="1000">
+        <dl class="facts3">
+          <div><dt>Founded</dt><dd>1973</dd></div>
+          <div><dt>Members &amp; alumni</dt><dd>12,662+</dd></div>
+          <div><dt>Campus</dt><dd>HCC – Northwest</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="hero__plate" data-reveal="plate" data-delay="200">
+      <div class="media hero__img"><img src="assets/photos/fellowship/01.jpg" alt="Omega Sigma officers with their medallions on campus" fetchpriority="high"></div>
+    </div>
+    <div class="hero__cue" data-reveal="fade" data-delay="1400"><span>Scroll to enter</span><span></span></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATEMENT
+     ============================================================ -->
+<section class="section statement">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal="fade">The chapter</span>
+    <p class="statement__text" data-words data-stagger="30">Phi Theta Kappa asks four things of its members: scholarship, leadership, service, and fellowship. For more than fifty years, Omega Sigma has answered with study nights and service projects, conferences across the country, and a community that keeps showing up for each other.</p>
+    <p class="statement__sig" data-reveal="fadeUp" data-delay="400">— Omega Sigma, est. 1973</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     EVENTS  (rendered from SITE.events below)
+     ============================================================ -->
+<section class="section" id="events">
+  <div class="wrap">
+    <div class="sh">
+      <span class="eyebrow" data-reveal="fade">Events · 2026</span>
+      <h2 data-lines>A year of <span class="accent">moments</span> worth keeping.</h2>
+    </div>
+    <div class="events__grid" id="eventsGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PINNED CTA #1
+     ============================================================ -->
+<section class="pinned dark">
+  <div class="wrap grid12">
+    <div class="pinned__copywrap"><div class="pinned__copy">
+      <span class="eyebrow" data-reveal="fade">Recognition</span>
+      <h2 data-lines>Honors are earned together.</h2>
+      <p class="pinned__body" data-words data-stagger="16">Since 2016 the chapter has collected Distinguished Chapter, Honors in Action, and advisor awards from Phi Theta Kappa International. Each one is the work of every officer team that came before.</p>
+      <div class="pinned__cta" data-reveal="fadeUp" data-delay="300"><a class="cta cta--solid" href="#awards">See the awards <span class="arrow">→</span></a></div>
+    </div></div>
+    <div class="pinned__plate" data-reveal="plate">
+      <div class="media pinned__img"><img src="assets/photos/first-general-meeting/02.jpg" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HALLMARKS
+     ============================================================ -->
+<section class="section grey">
+  <div class="wrap">
+    <div class="sh">
+      <span class="eyebrow" data-reveal="fade">The four hallmarks</span>
+      <h2 data-lines>What the chapter runs on.</h2>
+    </div>
+    <div class="cards">
+      <article class="card" data-reveal="fadeUp" data-delay="0"><span class="card__idx">01</span><h3>Scholarship</h3><p>We study hard and help each other do the same, from honors seminars to late-night review sessions.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="90"><span class="card__idx">02</span><h3>Leadership</h3><p>Officers and members step up: running meetings, leading projects, and representing HCC at conferences.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="180"><span class="card__idx">03</span><h3>Service</h3><p>Honors in Action and College Projects put our research to work for the campus and the city.</p></article>
+      <article class="card" data-reveal="fadeUp" data-delay="270"><span class="card__idx">04</span><h3>Fellowship</h3><p>Food trucks, road trips, and coffee-shop planning sessions. The friendships are part of the point.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="grid12">
+      <div class="about__head">
+        <span class="eyebrow" data-reveal="fade">About</span>
+        <h2 data-lines>Fifty years of students <span class="accent">raising</span> the bar at HCC.</h2>
+      </div>
+      <div class="about__side about__paras">
+        <p data-words data-stagger="10">Omega Sigma was chartered in 1973 at what is now Houston City College – Northwest. More than 12,600 students have joined since, each invited for their academic achievement and asked to do something with it.</p>
+        <p data-words data-stagger="10">Recent chapter projects include research on how access to green space in Houston affects mental health and well-being, filming a virtual tour of campus, and a community project with Houston Community College.</p>
+        <p data-words data-stagger="10">The chapter is guided by advisors Dr. Nichole Boutte-Heiniluoma, Dr. Gisela Ables, and Dr. Nicolas Rangel, whose work has earned national advisor awards of its own.</p>
+      </div>
+    </div>
+    <div class="about__photos">
+      <div class="media" data-reveal="plate" data-delay="0"><img src="assets/photos/honors-institute-denver/05.jpg" alt="Group photo at the Honors Institute, University of Denver" loading="lazy"></div>
+      <div class="media" data-reveal="plate" data-delay="100"><img src="assets/photos/texas-leadership-conference/02.jpg" alt="Members at the George Bush Presidential Library" loading="lazy"></div>
+      <div class="media" data-reveal="plate" data-delay="200"><img src="assets/photos/third-general-meeting/03.jpg" alt="A full room at a general meeting" loading="lazy"></div>
+    </div>
+    <dl class="ledger" data-reveal="fadeUp">
+      <div><dt>Founded</dt><dd>1973</dd></div>
+      <div><dt>College</dt><dd>Houston City College – Northwest</dd></div>
+      <div><dt>Members &amp; alumni</dt><dd>12,662+</dd></div>
+      <div><dt>Distinguished Chapter</dt><dd>5 times since 2016</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE CHAPTER YEAR
+     ============================================================ -->
+<section class="section" id="year">
+  <div class="wrap grid12">
+    <div class="process__left"><div class="process__sticky sh">
+      <span class="eyebrow" data-reveal="fade">The chapter year</span>
+      <h2 data-lines>From induction to the conference floor.</h2>
+    </div></div>
+    <div class="process__right">
+      <ol class="steps">
+        <li data-reveal="fadeUp"><span class="steps__idx">01</span><div class="steps__body"><h3>Induct</h3><p>Each year begins by pinning a new officer team and welcoming the members who earned their invitation.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">02</span><div class="steps__body"><h3>Gather</h3><p>General meetings bring everyone into one room for workshops, speakers, food, and planning what comes next.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">03</span><div class="steps__body"><h3>Travel</h3><p>Honors Institutes and leadership conferences take members to Denver, College Station, and beyond.</p></div></li>
+        <li data-reveal="fadeUp"><span class="steps__idx">04</span><div class="steps__body"><h3>Serve</h3><p>Research and service projects turn what we learn into something the campus and the community can use.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     OFFICERS  (rendered from SITE.officers below)
+     ============================================================ -->
+<section class="section grey" id="officers">
+  <div class="wrap">
+    <div class="officers__head">
+      <div class="sh">
+        <span class="eyebrow" data-reveal="fade" id="officersTerm">Officer team</span>
+        <h2 data-lines>Five officers, <span class="accent">one</span> chapter.</h2>
+      </div>
+      <p class="officers__lead" data-reveal="fade">The students who keep Omega Sigma running this year: planning the meetings, leading the trips, and carrying the chapter's name to every conference.</p>
+    </div>
+    <div class="media officers__banner" data-reveal="plate"><img src="assets/photos/officer-induction/02.jpg" alt="The officer team after their induction ceremony" loading="lazy"></div>
+    <p class="officers__banner-cap" data-reveal="fade">Officer induction · June 2026</p>
+    <div class="officers__grid" id="officersGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AWARDS  (rendered from SITE.awards below)
+     ============================================================ -->
+<section class="section" id="awards">
+  <div class="wrap">
+    <div class="awards__head">
+      <div class="sh">
+        <span class="eyebrow" data-reveal="fade">Awards</span>
+        <h2 data-lines>A decade of <span class="accent">recognition.</span></h2>
+      </div>
+      <p class="awards__lead" data-reveal="fade">Presented to the Omega Sigma chapter by Phi Theta Kappa International, as listed on the chapter's official page.</p>
+    </div>
+    <div class="awards__grid" id="awardsGrid"></div>
+    <div class="awards__cta" data-reveal="fadeUp"><a class="cta cta--solid" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">View the chapter on ptk.org <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PINNED CTA #2  (join)
+     ============================================================ -->
+<section class="pinned pinned--center dark" id="contact">
+  <div class="wrap">
+    <div class="pinned__copy">
+      <span class="eyebrow" data-reveal="fade">Join</span>
+      <h2 data-lines>Your name belongs on this page.</h2>
+      <p class="pinned__body" data-words data-stagger="16">Invited to Phi Theta Kappa, or just curious about what we do? Reach out to the chapter advisors or come to a general meeting. Every legacy starts with one conversation.</p>
+      <div class="pinned__cta" data-reveal="fadeUp" data-delay="300"><a class="cta cta--solid" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">Contact the chapter <span class="arrow">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY  (rendered from SITE.events photos)
+     ============================================================ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="sh">
+      <span class="eyebrow" data-reveal="fade">Gallery</span>
+      <h2 data-lines>Every photo, every <span class="accent">event.</span></h2>
+    </div>
+    <div class="gallery__filters" id="galleryFilters" data-reveal="fade" role="group" aria-label="Filter photos by event"></div>
+    <div class="gallery__grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLACES
+     ============================================================ -->
+<section class="section grey">
+  <div class="wrap">
+    <div class="sh">
+      <span class="eyebrow" data-reveal="fade">Where we've been</span>
+      <h2 data-lines>Representing HCC, near and far.</h2>
+    </div>
+    <ul class="places" id="placesList"></ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section" id="faq">
+  <div class="wrap grid12">
+    <div class="faq__left"><div class="sh">
+      <span class="eyebrow" data-reveal="fade">Questions</span>
+      <h2 data-lines>Before you join.</h2>
+    </div></div>
+    <div class="faq__right" id="faqList"></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer dark">
+  <div class="wrap">
+    <div class="grid12">
+      <div class="footer__brand" data-reveal="fadeUp">
+        <a class="logo" href="#top"><span class="logo__mark"></span><span class="logo__word">omega sigma</span></a>
+        <p class="footer__tag">Scholarship, leadership, service, fellowship.</p>
+        <a class="footer__mail" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">ptk.org / omega sigma</a>
+      </div>
+      <div class="footer__col">
+        <p class="footer__title">Explore</p>
+        <ul class="footer__list"><li><a href="#events">Events</a></li><li><a href="#about">About</a></li><li><a href="#officers">Officers</a></li><li><a href="#awards">Awards</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__title">Chapter</p>
+        <ul class="footer__list"><li><a href="#gallery">Gallery</a></li><li><a href="#year">Chapter year</a></li><li><a href="#contact">Join</a></li><li><a href="#faq">FAQ</a></li></ul>
+      </div>
+      <div class="footer__col footer__col--wide">
+        <p class="footer__title">Links</p>
+        <ul class="footer__list">
+          <li><a href="https://www.ptk.org" target="_blank" rel="noreferrer noopener">Phi Theta Kappa</a></li>
+          <li><a href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">Chapter page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__giant" aria-hidden="true" data-reveal="fadeUp">Omega Sigma</div>
+    <div class="footer__legal">
+      <p>© 2026 Omega Sigma Chapter of Phi Theta Kappa · Houston City College – Northwest</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL MENU
+     ============================================================ -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="menu__panel"></div>
+  <div class="menu__content">
+    <div class="menu__top"><span class="menu__label">Menu</span><button class="menu__close" id="menuClose">Close ✕</button></div>
+    <nav class="menu__nav" id="menuNav"></nav>
+    <div class="menu__bottom">
+      <div><a class="mail" href="https://www.ptk.org/chapters/omega-sigma-chapter" target="_blank" rel="noreferrer noopener">Omega Sigma · Phi Theta Kappa</a><p>Houston City College – Northwest</p></div>
+      <div class="menu__social"><a href="https://www.ptk.org" target="_blank" rel="noreferrer noopener">ptk.org</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     LIGHTBOX
+     ============================================================ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb__top"><div><p class="lb__title" id="lbTitle"></p><p class="lb__count" id="lbCount"></p></div><button class="lb__close" id="lbClose">Close ✕</button></div>
+  <div class="lb__stage">
+    <button class="lb__nav lb__prev" id="lbPrev" aria-label="Previous photo">←</button>
+    <img id="lbImg" alt="">
+    <button class="lb__nav lb__next" id="lbNext" aria-label="Next photo">→</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   CONTENT — edit here to update the site.
+   Photos live in assets/photos/<event-slug>/NN.jpg (see CONTENT.md).
+   ============================================================ */
+const SITE = {
+  officerTerm: "Officer team · 2026–27",
+  // Five officer slots. Replace name / role / bio, and set photo to a file path
+  // (e.g. "assets/photos/officers/president.jpg", 3:4 portrait) when ready.
+  officers: [
+    { name: "Officer Name", role: "President",                   bio: "Add a one-line bio: major, transfer goal, favourite chapter moment.", photo: null },
+    { name: "Officer Name", role: "Vice President of Scholarship", bio: "Add a one-line bio.", photo: null },
+    { name: "Officer Name", role: "Vice President of Leadership",  bio: "Add a one-line bio.", photo: null },
+    { name: "Officer Name", role: "Vice President of Service",     bio: "Add a one-line bio.", photo: null },
+    { name: "Officer Name", role: "Vice President of Fellowship",  bio: "Add a one-line bio.", photo: null },
+  ],
+  // Events, newest last. cover = index into photos; ratio = cover aspect ratio.
+  events: [
+    { slug: "officer-induction", title: "Officer Induction", place: "Houston", month: "June", year: "2026", ratio: "3 / 2", cover: 0, count: 4,
+      desc: "The new officer team received their medallions in a backyard ceremony with advisors and friends, the quiet start of a busy year." },
+    { slug: "honors-institute-denver", title: "Honors Institute", place: "University of Denver", month: "June", year: "2026", ratio: "3 / 2", cover: 0, count: 5,
+      desc: "Phi Theta Kappa's national Honors Institute brought our members to Denver for three days of lectures, seminars, and long conversations with chapters from across the country." },
+    { slug: "texas-honors-institute", title: "Texas Honors Institute", place: "Texas Junior College", month: "July", year: "2026", ratio: "3 / 2", cover: 0, count: 5,
+      desc: "A summer weekend with chapters from across Texas: honors sessions by day, campus walks at dusk, and plenty of new friends from other colleges." },
+    { slug: "first-general-meeting", title: "First General Meeting", place: "HCC – Northwest", month: "September", year: "2026", ratio: "3 / 2", cover: 4, count: 5,
+      desc: "The year's first general meeting introduced the officer team, welcomed new members, and gave everyone time to meet the advisors one-on-one." },
+    { slug: "fellowship", title: "Fellowship", place: "Around Houston", month: "Summer – Fall", year: "2026", ratio: "3 / 2", cover: 3, count: 5,
+      desc: "Food-truck nights, coffee-shop planning sessions, and van rides to the next event. These are the in-between moments that turn a chapter into friends." },
+    { slug: "second-general-meeting", title: "Second General Meeting", place: "HCC – Northwest", month: "October", year: "2026", ratio: "3 / 2", cover: 0, count: 4,
+      desc: "A hands-on meeting with a guest presentation, snacks, and members working through activities together around the room." },
+    { slug: "texas-leadership-conference", title: "Texas Leadership Conference", place: "Texas A&M University RELLIS Campus", month: "October", year: "2026", ratio: "3 / 2", cover: 0, count: 6,
+      desc: "Three days in Bryan–College Station for leadership workshops, sessions with chapters from across the state, and a visit to the George Bush Presidential Library." },
+    { slug: "third-general-meeting", title: "Third General Meeting", place: "HCC – Northwest", month: "November", year: "2026", ratio: "3 / 4", cover: 0, count: 4,
+      desc: "A full room for the third meeting of the semester, as officers shared upcoming projects, opportunities, and ways for members to get involved." },
+  ],
+  awards: [
+    { year: "2026", items: ["Distinguished Chapter Award"] },
+    { year: "2025", items: ["Continued Excellence Award for Advisors", "Distinguished Chapter Advisor Team Award"] },
+    { year: "2024", items: ["Distinguished Advisor Award", "Distinguished Chapter Award", "Distinguished College Project Award", "Honors in Action Project Award"] },
+    { year: "2021", items: ["Distinguished Chapter Advisor Team Award", "Distinguished Chapter Award", "Distinguished College Project Award", "Honors in Action Project Award"] },
+    { year: "2020", items: ["Distinguished Chapter Officer Team Award"] },
+    { year: "2017", items: ["Distinguished Chapter Award", "Distinguished Theme Award (Honors in Action)", "Honors in Action Project Award"] },
+    { year: "2016", items: ["Distinguished Chapter Award", "Distinguished Theme Award (Honors in Action)", "Honors in Action Project Award", "Most Distinguished Chapter Finalist"] },
+  ],
+  places: ["University of Denver", "Texas A&M University RELLIS Campus", "George Bush Presidential Library", "Texas Junior College", "Houston City College – Northwest", "Houston, Texas"],
+  faq: [
+    { q: "What is Phi Theta Kappa?", a: "Phi Theta Kappa is the international honor society for students at two-year colleges. Omega Sigma is its chapter at Houston City College – Northwest, chartered in 1973." },
+    { q: "How do I become a member?", a: "Membership is by invitation, based on academic achievement. Eligible students hear from the chapter directly. If you have questions about current requirements, the chapter advisors can help." },
+    { q: "What do members get?", a: "Members can apply for transfer scholarships from Phi Theta Kappa's four-year partners, which cover more than 800 colleges and universities, plus leadership training, conferences, and a community on campus." },
+    { q: "How can I reach the chapter?", a: "The advisors' contact details are listed on the Omega Sigma page at ptk.org. You can also find us at our general meetings during the fall and spring semesters." },
+  ],
+  nav: [["Events","#events"],["About","#about"],["Officers","#officers"],["Awards","#awards"],["Join","#contact"]],
+};
+</script>
+
+<script type="module">
+/* ============================================================
+   RENDER CONTENT
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const pad = n => String(n).padStart(2, "0");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const photosOf = ev => Array.from({ length: ev.count }, (_, i) => `assets/photos/${ev.slug}/${pad(i + 1)}.jpg`);
+
+$("#officersTerm").textContent = SITE.officerTerm;
+
+$("#eventsGrid").innerHTML = SITE.events.map((ev, i) => `
+  <article class="event">
+    <figure>
+      <button class="event__trigger" data-lightbox="${i}" aria-label="Open ${esc(ev.title)} photos">
+        <div class="media" data-reveal="plate" style="aspect-ratio:${ev.ratio}">
+          <div class="parallax-inner"><img src="${photosOf(ev)[ev.cover]}" alt="${esc(ev.title)} — ${esc(ev.place)}" loading="lazy"></div>
+        </div>
+      </button>
+      <figcaption>
+        <div class="event__row">
+          <div><h3>${esc(ev.title)}</h3><p class="event__meta">${esc(ev.place)} · ${esc(ev.month)}</p></div>
+          <span class="event__year">${esc(ev.year)}</span>
+        </div>
+        <p class="event__desc">${esc(ev.desc)}</p>
+        <button class="event__open" data-lightbox="${i}">View ${ev.count} photos <span class="arrow">→</span></button>
+      </figcaption>
+    </figure>
+  </article>`).join("");
+
+$("#officersGrid").innerHTML = SITE.officers.map((o, i) => {
+  const initial = o.name && o.name !== "Officer Name" ? o.name.trim()[0] : (i + 1);
+  return `
+  <article class="officer" data-reveal="fadeUp" data-delay="${i * 90}">
+    <div class="media officer__photo">
+      ${o.photo ? `<img src="${esc(o.photo)}" alt="${esc(o.name)}, ${esc(o.role)}" loading="lazy">`
+                : `<div class="officer__ph"><span class="mark"><span>${initial}</span></span><small>Photo coming soon</small></div>`}
+    </div>
+    <div class="officer__info">
+      <span class="officer__idx">${pad(i + 1)}</span>
+      <h3>${esc(o.name)}</h3>
+      <p class="officer__role">${esc(o.role)}</p>
+      <p class="officer__bio">${esc(o.bio)}</p>
+    </div>
+  </article>`;}).join("");
+
+$("#awardsGrid").innerHTML = SITE.awards.map((a, i) => `
+  <article class="award" data-reveal="fadeUp" data-delay="${(i % 2) * 90}">
+    <div><ul>${a.items.map(t => `<li>${esc(t)}</li>`).join("")}</ul><small>${a.items.length} award${a.items.length > 1 ? "s" : ""}</small></div>
+    <span class="award__year">${esc(a.year)}</span>
+  </article>`).join("");
+
+$("#placesList").innerHTML = SITE.places.map((p, i) => `
+  <li data-reveal="fadeUp" data-delay="${(i % 3) * 80}"><span class="idx">${pad(i + 1)}</span><span class="name">${esc(p)}</span></li>`).join("");
+
+$("#faqList").innerHTML = SITE.faq.map((f, i) => `
+  <div class="faq__row" data-reveal="fade" data-delay="${i * 80}">
+    <h3><button class="faq__btn" id="faq-b-${i}" aria-expanded="false" aria-controls="faq-p-${i}"><span class="faq__q">${esc(f.q)}</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+    <div class="faq__panel" id="faq-p-${i}" role="region" aria-labelledby="faq-b-${i}"><p>${esc(f.a)}</p></div>
+  </div>`).join("");
+
+$("#menuNav").innerHTML = SITE.nav.map(([l, h], i) => `
+  <a href="${h}" style="transition-delay:${180 + i * 70}ms"><span class="idx">${pad(i + 1)}</span><span class="lbl">${l}</span></a>`).join("");
+
+// Gallery + filters
+const gallery = SITE.events.flatMap((ev, ei) => photosOf(ev).map((src, pi) => ({ src, ei, pi, ev })));
+$("#galleryFilters").innerHTML = [`<button class="chip" aria-pressed="true" data-filter="all">All</button>`]
+  .concat(SITE.events.map((ev, i) => `<button class="chip" aria-pressed="false" data-filter="${i}">${esc(ev.title)}</button>`)).join("");
+$("#galleryGrid").innerHTML = gallery.map(g => `
+  <button class="gallery__item" data-ev="${g.ei}" data-lightbox="${g.ei}" data-index="${g.pi}">
+    <div class="media"><img src="${g.src}" alt="${esc(g.ev.title)}, photo ${g.pi + 1}" loading="lazy" style="position:static;height:auto"></div>
+    <span>${esc(g.ev.title)}</span>
+  </button>`).join("");
+$("#galleryFilters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  document.querySelectorAll("#galleryFilters .chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+  const f = b.dataset.filter;
+  document.querySelectorAll(".gallery__item").forEach(it => { it.hidden = f !== "all" && it.dataset.ev !== f; });
+});
+
+/* ============================================================
+   SMOOTH SCROLL (Lenis, loaded defensively)
+   ============================================================ */
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduced) document.documentElement.classList.add("reduced");
+let lenis = null;
+const scrollListeners = [];
+try {
+  if (!reduced) {
+    const { default: Lenis } = await import("https://cdn.jsdelivr.net/npm/lenis@1.3.19/+esm");
+    lenis = new Lenis({ smoothWheel: true });
+    lenis.on("scroll", () => scrollListeners.forEach(fn => fn()));
+    const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  }
+} catch (err) { console.warn("Lenis unavailable, using native scroll", err); }
+if (!lenis) addEventListener("scroll", () => scrollListeners.forEach(fn => fn()), { passive: true });
+
+const lock = () => { lenis?.stop(); document.documentElement.classList.add("is-locked"); };
+const unlock = () => { lenis?.start(); document.documentElement.classList.remove("is-locked"); };
+const goTo = hash => { const t = document.querySelector(hash); if (!t) return; lenis ? lenis.scrollTo(t, { offset: 0 }) : t.scrollIntoView({ behavior: "smooth" }); };
+
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const h = a.getAttribute("href"); if (h.length < 2 && h !== "#") return;
+  e.preventDefault();
+  if (menu.classList.contains("open")) closeMenu();
+  goTo(h === "#" ? "#top" : h);
+});
+
+/* ============================================================
+   TEXT ENGINES
+   ============================================================ */
+function splitWords(el) {
+  const stagger = +el.dataset.stagger || 16;
+  const words = el.textContent.trim().split(/\s+/);
+  el.innerHTML = words.map((w, i) => `<span class="w" style="transition-delay:${i * stagger}ms">${esc(w)}</span>`).join(" ");
+}
+function splitLines(el) {
+  const original = el.innerHTML;
+  el.dataset.original = original;
+  // wrap every word (keeping accent styling) in a measurable span
+  const tokens = [];
+  el.childNodes.forEach(n => {
+    const isAccent = n.nodeType === 1 && n.classList.contains("accent");
+    n.textContent.split(/(\s+)/).forEach(t => { if (t.trim()) tokens.push({ t, isAccent }); });
+  });
+  el.innerHTML = tokens.map(k => `<span class="tok${k.isAccent ? " accent" : ""}">${esc(k.t)}</span>`).join(" ");
+  const lines = []; let top = null;
+  el.querySelectorAll(".tok").forEach(s => {
+    if (top === null || Math.abs(s.offsetTop - top) > 4) { lines.push([]); top = s.offsetTop; }
+    lines[lines.length - 1].push(s.outerHTML);
+  });
+  const stagger = +el.dataset.stagger || 90;
+  el.innerHTML = lines.map((l, i) => `<span class="line-clip"><span class="line-inner" style="transition-delay:${i * stagger}ms">${l.join(" ")}</span></span>`).join("");
+  el.classList.add("split");
+  el._restoreAfter = 1000 + lines.length * stagger + 100;
+}
+document.querySelectorAll("[data-words]").forEach(splitWords);
+await document.fonts?.ready;
+document.querySelectorAll("[data-lines]").forEach(splitLines);
+
+/* ============================================================
+   REVEAL OBSERVER (once)
+   ============================================================ */
+const play = el => {
+  const d = +el.dataset.delay || 0;
+  setTimeout(() => {
+    el.classList.add("in");
+    if (el.dataset.original) setTimeout(() => { el.innerHTML = el.dataset.original; delete el.dataset.original; }, el._restoreAfter);
+  }, d);
+};
+const targets = document.querySelectorAll("[data-reveal],[data-lines],[data-words]");
+if (reduced || !("IntersectionObserver" in window)) targets.forEach(el => el.classList.add("in"));
+else {
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) { play(en.target); io.unobserve(en.target); }
+  }), { threshold: 0, rootMargin: "0px 0px -10% 0px" });
+  targets.forEach(el => io.observe(el));
+}
+
+/* ============================================================
+   EVENTS PARALLAX (desktop only)
+   ============================================================ */
+const plates = [...document.querySelectorAll(".event .parallax-inner")];
+const parallax = () => {
+  if (innerWidth <= 768 || reduced) { plates.forEach(p => p.style.transform = ""); return; }
+  const vh = innerHeight, rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  plates.forEach(p => {
+    const r = p.parentElement.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > vh) return;
+    const prog = (vh - r.top) / (vh + r.height);
+    p.style.transform = `translate3d(0,${(2.5 - prog * 5) * rem}px,0)`;
+  });
+};
+scrollListeners.push(parallax); addEventListener("resize", parallax); parallax();
+
+/* ============================================================
+   MODAL MENU
+   ============================================================ */
+const menu = $("#menu");
+const openMenu = () => { menu.classList.add("open"); lock(); $("#menuClose").focus(); };
+function closeMenu() { menu.classList.remove("open"); unlock(); $("#menuOpen").focus(); }
+$("#menuOpen").addEventListener("click", openMenu);
+$("#menuClose").addEventListener("click", closeMenu);
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+document.querySelectorAll(".faq__btn").forEach(btn => {
+  const panel = document.getElementById(btn.getAttribute("aria-controls"));
+  btn.addEventListener("click", () => {
+    const open = btn.getAttribute("aria-expanded") !== "true";
+    btn.setAttribute("aria-expanded", open);
+    panel.style.height = open ? panel.scrollHeight + "px" : "0px";
+    panel.style.opacity = open ? 1 : 0;
+  });
+  new ResizeObserver(() => { if (btn.getAttribute("aria-expanded") === "true") panel.style.height = panel.firstElementChild.scrollHeight + "px"; }).observe(panel.firstElementChild);
+});
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+const lb = $("#lb"); let lbEv = 0, lbIdx = 0;
+const showLb = () => {
+  const ev = SITE.events[lbEv], list = photosOf(ev);
+  $("#lbImg").src = list[lbIdx]; $("#lbImg").alt = `${ev.title}, photo ${lbIdx + 1}`;
+  $("#lbTitle").textContent = ev.title;
+  $("#lbCount").textContent = `${ev.place} · ${ev.month} ${ev.year} · ${lbIdx + 1} / ${list.length}`;
+};
+const openLb = (ei, pi = null) => { lbEv = ei; lbIdx = pi ?? SITE.events[ei].cover; showLb(); lb.classList.add("open"); lock(); $("#lbClose").focus(); };
+const closeLb = () => { lb.classList.remove("open"); unlock(); };
+const step = d => { const n = SITE.events[lbEv].count; lbIdx = (lbIdx + d + n) % n; showLb(); };
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-lightbox]"); if (!t) return;
+  openLb(+t.dataset.lightbox, t.dataset.index != null ? +t.dataset.index : null);
+});
+$("#lbClose").addEventListener("click", closeLb);
+$("#lbPrev").addEventListener("click", () => step(-1));
+$("#lbNext").addEventListener("click", () => step(1));
+lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("lb__stage")) closeLb(); });
+document.addEventListener("keydown", e => {
+  if (lb.classList.contains("open")) {
+    if (e.key === "Escape") closeLb(); if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1);
+  } else if (menu.classList.contains("open") && e.key === "Escape") closeMenu();
+});
+</script>
+</body>
+</html>

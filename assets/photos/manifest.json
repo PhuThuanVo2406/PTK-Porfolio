@@ -1,0 +1,208 @@
+{
+ "fellowship": [
+  {
+   "file": "fellowship/01.jpg",
+   "w": 1310,
+   "h": 1600
+  },
+  {
+   "file": "fellowship/02.jpg",
+   "w": 1200,
+   "h": 1600
+  },
+  {
+   "file": "fellowship/03.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "fellowship/04.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "fellowship/05.jpg",
+   "w": 1200,
+   "h": 1600
+  }
+ ],
+ "first-general-meeting": [
+  {
+   "file": "first-general-meeting/01.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "first-general-meeting/02.jpg",
+   "w": 1200,
+   "h": 1600
+  },
+  {
+   "file": "first-general-meeting/03.jpg",
+   "w": 1200,
+   "h": 1600
+  },
+  {
+   "file": "first-general-meeting/04.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "first-general-meeting/05.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "honors-institute-denver": [
+  {
+   "file": "honors-institute-denver/01.jpg",
+   "w": 1600,
+   "h": 1372
+  },
+  {
+   "file": "honors-institute-denver/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "honors-institute-denver/03.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "honors-institute-denver/04.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "honors-institute-denver/05.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "officer-induction": [
+  {
+   "file": "officer-induction/01.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "officer-induction/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "officer-induction/03.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "officer-induction/04.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "second-general-meeting": [
+  {
+   "file": "second-general-meeting/01.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "second-general-meeting/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "second-general-meeting/03.jpg",
+   "w": 1200,
+   "h": 1600
+  },
+  {
+   "file": "second-general-meeting/04.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "texas-honors-institute": [
+  {
+   "file": "texas-honors-institute/01.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-honors-institute/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-honors-institute/03.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-honors-institute/04.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-honors-institute/05.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "texas-leadership-conference": [
+  {
+   "file": "texas-leadership-conference/01.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-leadership-conference/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-leadership-conference/03.jpg",
+   "w": 1200,
+   "h": 1600
+  },
+  {
+   "file": "texas-leadership-conference/04.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-leadership-conference/05.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "texas-leadership-conference/06.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ],
+ "third-general-meeting": [
+  {
+   "file": "third-general-meeting/01.jpg",
+   "w": 1060,
+   "h": 1600
+  },
+  {
+   "file": "third-general-meeting/02.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "third-general-meeting/03.jpg",
+   "w": 1600,
+   "h": 1200
+  },
+  {
+   "file": "third-general-meeting/04.jpg",
+   "w": 1600,
+   "h": 1200
+  }
+ ]
+}
